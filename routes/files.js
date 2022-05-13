@@ -65,6 +65,10 @@ router.post('/send', async (req, res) => {
     
     // Send mail
     const sendMail = require('../services/mailService');
+
+    file.sender = emailFrom;
+    file.receiver = emailTo;
+    const response = await file.save();
     
     sendMail({
         from: emailFrom,
@@ -79,10 +83,8 @@ router.post('/send', async (req, res) => {
         })
         
     });
-    
-    file.sender = emailFrom;
-    file.receiver = emailTo;
-    const response = await file.save();
+
+    return res.send({success: true});
 
 });
 
