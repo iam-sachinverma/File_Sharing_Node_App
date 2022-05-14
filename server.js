@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+
 
 const PORT = process.env.PORT || 3000;  
 
@@ -13,6 +16,9 @@ app.use(express.static('public'));
 
 const connectDB = require('./config/db');
 connectDB();
+
+
+app.use(bodyParser.json()); app.use(cookieParser()); app.use(cors())
 
 // CORS
 const corsOptions = {

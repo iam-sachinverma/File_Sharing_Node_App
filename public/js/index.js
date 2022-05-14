@@ -1,3 +1,5 @@
+// require("dotenv").config();
+
 const dropZone = document.querySelector(".drop-zone");
 const fileInput = document.querySelector("#fileInput");
 const browseBtn = document.querySelector("#browseBtn");
@@ -47,7 +49,7 @@ dropZone.addEventListener("dragover", (e) => {
   e.preventDefault();
   dropZone.classList.add("dragged");
 
-  // console.log("dropping file");
+  console.log("dropping file");
 });
 
 dropZone.addEventListener("dragleave", (e) => {
