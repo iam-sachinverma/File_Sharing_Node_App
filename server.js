@@ -5,7 +5,6 @@ const cors = require('cors');
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
-
 const PORT = process.env.PORT || 3000;  
 
 // json data parser
