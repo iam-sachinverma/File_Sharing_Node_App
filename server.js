@@ -16,7 +16,6 @@ app.use(express.static('public'));
 const connectDB = require('./config/db');
 connectDB();
 
-
 app.use(bodyParser.json()); app.use(cookieParser()); app.use(cors())
 
 // CORS
